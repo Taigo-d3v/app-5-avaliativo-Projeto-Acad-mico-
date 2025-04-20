@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2A7ABF">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#8CBDED"
+        android:layout_marginTop="50dp"/>
+
+    <ImageView
+        android:id="@+id/cpu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/pedra"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="250dp"
+        android:scaleType="fitXY"
+        android:scaleY="0.6"
+        android:scaleX="0.6"/>
+
+    <TextView
+        android:id="@+id/bntBack"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:textColor="#8CBDED"
+        android:background="@drawable/contorno"
+        android:text="Voltar"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="450dp"
+        android:paddingHorizontal="30dp"
+        android:paddingVertical="35dp"/>
+
+    <ImageView
+        android:id="@+id/user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/pedra"
+        android:layout_marginTop="250dp"
+        android:scaleType="fitXY"
+        android:scaleY="0.6"
+        android:scaleX="-0.6"/>
+
+    <TextView
+        android:id="@+id/resultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/contorno"
+        android:text="Resultado"
+        android:padding="5dp"
+        android:textColor="#D0EDFC"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:layout_marginTop="120dp"/>
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="#2A7ABF"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="450dp" />
+
+    <LinearLayout
+        android:id="@+id/optionButtons"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp">
+
+        <ImageButton
+            android:id="@+id/btnPedra"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/pedra"
+            android:padding="5dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/contorno"
+            android:scaleType="fitXY"
+            android:scaleY="1"
+            android:scaleX="1"
+            android:rotation="90"/>
+
+        <ImageButton
+            android:id="@+id/btnPapel"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/papel"
+            android:padding="5dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/contorno"
+            android:scaleType="fitXY"
+            android:scaleY="1"
+            android:scaleX="1"
+            android:rotation="90" />
+
+        <ImageButton
+            android:id="@+id/btnTesoura"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/tesoura"
+            android:padding="5dp"
+            android:background="@drawable/contorno"
+            android:layout_margin="10dp"
+            android:scaleType="fitXY"
+            android:scaleY="1"
+            android:scaleX="1"
+            android:rotation="90" />
+    </LinearLayout>
+
+</RelativeLayout>

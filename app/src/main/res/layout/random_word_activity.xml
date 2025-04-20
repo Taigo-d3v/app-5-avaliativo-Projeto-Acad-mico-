@@ -1,0 +1,74 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2A7ABF">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#8CBDED"
+        android:layout_marginTop="50dp"/>
+    <TextView
+        android:id="@+id/bntBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Voltar"
+        android:textStyle="bold"
+        android:textSize="10dp"
+        android:background="@drawable/contorno"
+        android:paddingHorizontal="50dp"
+        android:padding="16dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="20sp"/>
+
+    <EditText
+        android:id="@+id/new_category_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nova Categoria"
+        android:textColorHint="@color/black"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"/>
+
+
+    <Button
+        android:id="@+id/add_category_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Adicionar Categoria"
+        android:backgroundTint="#2A7ABF"
+        android:textColor="#8CBDED"
+        android:layout_below="@id/new_category_input"
+        android:layout_margin="8dp"/>
+
+    <Button
+        android:id="@+id/sort_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sortear"
+        android:backgroundTint="#2A7ABF"
+        android:textColor="#8CBDED"
+        android:layout_toEndOf="@id/add_category_button"
+        android:layout_alignTop="@id/add_category_button"
+        android:layout_marginStart="16dp"/>
+
+    <TextView
+        android:id="@+id/result_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resultado do Sorteio"
+        android:layout_below="@id/add_category_button"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp"
+        android:textColor="#2A7ABF"
+        android:textStyle="bold"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/category_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/result_text"/>
+</RelativeLayout>

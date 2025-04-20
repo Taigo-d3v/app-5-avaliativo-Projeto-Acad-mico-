@@ -1,0 +1,50 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp">
+
+    <TextView
+        android:id="@+id/category_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:background="@drawable/contorno"
+        android:text="Categoria"
+        android:textSize="25dp"
+        android:textStyle="bold"/>
+
+    <ImageButton
+        android:id="@+id/delete_category_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:src="@android:drawable/ic_menu_delete"
+        android:background="?android:selectableItemBackgroundBorderless"/>
+
+    <EditText
+        android:id="@+id/new_value_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/category_name"
+        android:hint="Novo Valor"
+        android:layout_marginTop="4dp"/>
+
+    <Button
+        android:id="@+id/add_value_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/category_name"
+        android:text="Adicionar Valor"
+        android:backgroundTint="#2A7ABF"
+        android:textColor="#8CBDED"
+        android:layout_marginLeft="5dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/value_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/new_value_input"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/contorno"
+        android:padding="5dp"/>
+</RelativeLayout>

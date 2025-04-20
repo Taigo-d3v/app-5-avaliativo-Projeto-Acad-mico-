@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2A7ABF"
+    tools:context=".MainActivity">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#8CBDED"
+        android:layout_marginTop="50dp"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/puc"/>
+
+    <TextView
+        android:id="@+id/nome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nome: Tiago Godinho Freitas"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        android:textColor="#D0EDFC"
+        android:layout_marginTop="80dp"
+        android:padding="5dp"
+        android:background="@drawable/contorno"
+        android:layout_marginLeft="50dp"/>
+
+    <TextView
+        android:id="@+id/curso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Curso: ADS"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        android:textColor="#D0EDFC"
+        android:layout_below="@+id/nome"
+        android:layout_marginTop="15dp"
+        android:padding="5dp"
+        android:background="@drawable/contorno"
+        android:layout_marginLeft="50dp"/>
+
+    <TextView
+        android:id="@+id/matricula"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Matricula: 20241012001723"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        android:textColor="#D0EDFC"
+        android:layout_below="@+id/curso"
+        android:layout_marginTop="15dp"
+        android:padding="5dp"
+        android:background="@drawable/contorno"
+        android:layout_marginLeft="50dp"/>
+    <Button
+        android:id="@+id/bnt_iniciar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Continuar"
+        android:textColor="#D0EDFC"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:backgroundTint="#2A7ABF"
+        android:layout_marginTop="550dp"/>
+
+</RelativeLayout>

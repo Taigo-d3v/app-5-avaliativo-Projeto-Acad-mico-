@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2A7ABF">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#8CBDED"
+        android:layout_marginTop="50dp"/>
+    <TextView
+        android:id="@+id/BntCodDecod"
+        android:layout_width="180dp"
+        android:layout_height="250dp"
+        android:text="  Codificador\n          e Decodificador"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:background="@drawable/contorno"
+        android:paddingHorizontal="10dp"
+        android:paddingTop="80dp"
+        android:layout_marginTop="135dp"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:id="@+id/BntJokenPow"
+        android:layout_width="180dp"
+        android:layout_height="250dp"
+        android:text="Pedra\nPapel\nTesoura"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:background="@drawable/contorno"
+        android:paddingHorizontal="40dp"
+        android:paddingTop="80dp"
+        android:layout_marginTop="135dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"/>
+
+    <TextView
+        android:id="@+id/BntSecretCode"
+        android:layout_width="180dp"
+        android:layout_height="250dp"
+        android:text="Secret Code"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:background="@drawable/contorno"
+        android:paddingHorizontal="50dp"
+        android:paddingTop="90dp"
+        android:layout_below="@+id/BntCodDecod"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"/>
+
+    <TextView
+        android:id="@+id/BntRandomWord"
+        android:layout_width="180dp"
+        android:layout_height="250dp"
+        android:text="Criar e Sortear!"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:background="@drawable/contorno"
+        android:paddingHorizontal="40dp"
+        android:paddingTop="90dp"
+        android:layout_below="@+id/BntCodDecod"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"/>
+
+    <Button
+        android:id="@+id/bnt_voltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Voltar"
+        android:textColor="#D0EDFC"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:backgroundTint="#2A7ABF"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp"/>
+
+</RelativeLayout>
