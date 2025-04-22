@@ -33,13 +33,12 @@ public class SecretCodeActivity extends AppCompatActivity {
     private String codigoSecreto;
     private TextView bntBack;
     private Button bntEnviar;
-    private TextView txtTempo; // Novo elemento para o cronômetro
-
-    // Variáveis para o cronômetro
+    private TextView txtTempo;
     private long startTime;
     private boolean timerRunning;
     private Handler timerHandler = new Handler();
     private Runnable timerRunnable;
+    private int numeroTentativas = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,15 +52,14 @@ public class SecretCodeActivity extends AppCompatActivity {
         adapter = new AdapterSecretCode(listaTentativas);
         bntBack = findViewById(R.id.bntBack);
         bntEnviar = findViewById(R.id.bntEnviar);
-        txtTempo = findViewById(R.id.txtTempo); // Inicializa o TextView do tempo
+        txtTempo = findViewById(R.id.txtTempo);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
 
         gerarCodigoSecreto();
 
-        /* SEUS COMENTÁRIOS ORIGINAIS PRESERVADOS */
-        // Configuração do cronômetro
+        //cronômetro
         timerRunnable = new Runnable() {
             @Override
             public void run() {
@@ -78,7 +76,7 @@ public class SecretCodeActivity extends AppCompatActivity {
             }
         };
 
-        // Inicia o cronômetro quando o usuário começa a digitar
+        // Inicia o cronômetro
         inputCodigo.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -97,10 +95,9 @@ public class SecretCodeActivity extends AppCompatActivity {
         bntBack.setOnClickListener(v -> {
             stopTimer(); // Para o cronômetro ao voltar
             finish();
-            overridePendingTransition(
-                    R.anim.slide_in_left,
-                    R.anim.slide_out_right);
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
         });
+
         bntBack.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -120,7 +117,7 @@ public class SecretCodeActivity extends AppCompatActivity {
         bntEnviar.setOnClickListener(v -> verificarTentativa());
     }
 
-    /* MÉTODOS DO CRONÔMETRO */
+    // Métodos do cronômetro
     private void startTimer() {
         startTime = System.currentTimeMillis();
         timerRunning = true;
@@ -149,12 +146,14 @@ public class SecretCodeActivity extends AppCompatActivity {
             return;
         }
 
+        numeroTentativas++; // Incrementa o número de tentativas
+
         char[] tentativaChars = tentativa.toCharArray();
         char[] codigoChars = codigoSecreto.toCharArray();
         int[] cores = new int[4]; // 0 = vermelho, 1 = amarelo, 2 = verde
         boolean[] usados = new boolean[4]; // para marcar dígitos do código já utilizados
 
-        // SEU COMENTÁRIO ORIGINAL: marcar as corretas
+        // Marcar as corretas
         for (int i = 0; i < 4; i++) {
             if (tentativaChars[i] == codigoChars[i]) {
                 cores[i] = 2; // verde
@@ -162,7 +161,7 @@ public class SecretCodeActivity extends AppCompatActivity {
             }
         }
 
-        // SEU COMENTÁRIO ORIGINAL: marcar as amarelas
+        // Marcar as amarelas
         for (int i = 0; i < 4; i++) {
             if (cores[i] == 0) { // ainda não marcado
                 for (int j = 0; j < 4; j++) {
@@ -185,16 +184,14 @@ public class SecretCodeActivity extends AppCompatActivity {
             Intent i = new Intent(SecretCodeActivity.this, VictorySecretCode.class);
             esconderTeclado(inputCodigo);
 
-            // SEU COMENTÁRIO ORIGINAL: limpando a variavel
-            codigoSecreto = "";
-            gerarCodigoSecreto();
+            // Passa o número de tentativas para a tela de vitória
+            i.putExtra("numero_tentativas", numeroTentativas);
 
             // Passa o tempo gasto para a tela de vitória
             long elapsedTime = System.currentTimeMillis() - startTime;
             i.putExtra("tempo_jogado", elapsedTime);
 
             startActivity(i);
-            // SEU COMENTÁRIO ORIGINAL: animaçao troca de tela
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         }
 
@@ -219,6 +216,6 @@ public class SecretCodeActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        // Opcional: Pode adicionar lógica para retomar o timer se necessário
+
     }
 }
